@@ -1,0 +1,207 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Design system — Dear Mama Apartment (Ocean Deep)
+ *
+ * The @theme inline block maps CSS custom properties to Tailwind utility
+ * classes (e.g. --color-primary -> bg-primary, text-primary).
+ * All colors use oklch format.
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-deep: var(--deep);
+  --color-deep-soft: var(--deep-soft);
+  --shadow-elegant: 0 24px 48px -24px color-mix(in oklab, var(--deep) 40%, transparent);
+  --shadow-card: 0 12px 32px -18px color-mix(in oklab, var(--deep) 22%, transparent);
+}
+
+@theme {
+  --font-display: "Urbanist", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Epilogue", ui-sans-serif, system-ui, sans-serif;
+}
+
+:root {
+  --radius: 0.75rem;
+  --background: oklch(0.986 0.006 220);
+  --foreground: oklch(0.26 0.065 255);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.26 0.065 255);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.26 0.065 255);
+  --primary: oklch(0.58 0.09 216);
+  --primary-foreground: oklch(0.99 0.008 230);
+  --secondary: oklch(0.93 0.03 210);
+  --secondary-foreground: oklch(0.33 0.07 250);
+  --muted: oklch(0.94 0.02 220);
+  --muted-foreground: oklch(0.48 0.04 240);
+  --accent: oklch(0.74 0.1 185);
+  --accent-foreground: oklch(0.25 0.06 250);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.984 0.003 247.858);
+  --border: oklch(0.9 0.02 220);
+  --input: oklch(0.9 0.02 220);
+  --ring: oklch(0.58 0.09 216);
+  --deep: oklch(0.26 0.065 255);
+  --deep-soft: oklch(0.37 0.08 246);
+  --chart-1: oklch(0.58 0.09 216);
+  --chart-2: oklch(0.74 0.1 185);
+  --chart-3: oklch(0.37 0.08 246);
+  --chart-4: oklch(0.45 0.07 230);
+  --chart-5: oklch(0.82 0.06 200);
+  --sidebar: oklch(0.986 0.006 220);
+  --sidebar-foreground: oklch(0.26 0.065 255);
+  --sidebar-primary: oklch(0.58 0.09 216);
+  --sidebar-primary-foreground: oklch(0.99 0.008 230);
+  --sidebar-accent: oklch(0.93 0.03 210);
+  --sidebar-accent-foreground: oklch(0.33 0.07 250);
+  --sidebar-border: oklch(0.9 0.02 220);
+  --sidebar-ring: oklch(0.58 0.09 216);
+}
+
+.dark {
+  --background: oklch(0.22 0.055 255);
+  --foreground: oklch(0.96 0.01 220);
+  --card: oklch(0.28 0.06 252);
+  --card-foreground: oklch(0.96 0.01 220);
+  --popover: oklch(0.28 0.06 252);
+  --popover-foreground: oklch(0.96 0.01 220);
+  --primary: oklch(0.74 0.1 185);
+  --primary-foreground: oklch(0.25 0.06 250);
+  --secondary: oklch(0.33 0.06 250);
+  --secondary-foreground: oklch(0.96 0.01 220);
+  --muted: oklch(0.33 0.06 250);
+  --muted-foreground: oklch(0.72 0.03 230);
+  --accent: oklch(0.58 0.09 216);
+  --accent-foreground: oklch(0.96 0.01 220);
+  --destructive: oklch(0.704 0.191 22.216);
+  --destructive-foreground: oklch(0.984 0.003 247.858);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.74 0.1 185);
+  --deep: oklch(0.19 0.05 255);
+  --deep-soft: oklch(0.28 0.06 252);
+  --chart-1: oklch(0.74 0.1 185);
+  --chart-2: oklch(0.58 0.09 216);
+  --chart-3: oklch(0.45 0.07 230);
+  --chart-4: oklch(0.82 0.06 200);
+  --chart-5: oklch(0.37 0.08 246);
+  --sidebar: oklch(0.28 0.06 252);
+  --sidebar-foreground: oklch(0.96 0.01 220);
+  --sidebar-primary: oklch(0.74 0.1 185);
+  --sidebar-primary-foreground: oklch(0.25 0.06 250);
+  --sidebar-accent: oklch(0.33 0.06 250);
+  --sidebar-accent-foreground: oklch(0.96 0.01 220);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.74 0.1 185);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    overflow-x: clip;
+  }
+
+  body {
+    min-width: 0;
+    overflow-x: clip;
+    overflow-wrap: break-word;
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+  }
+
+  img,
+  svg,
+  video,
+  iframe {
+    max-width: 100%;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+  }
+}
+
+/* Shared brand treatments */
+.hero-overlay {
+  background: linear-gradient(
+    100deg,
+    color-mix(in oklab, var(--deep) 94%, transparent) 0%,
+    color-mix(in oklab, var(--deep) 78%, transparent) 48%,
+    color-mix(in oklab, var(--deep-soft) 40%, transparent) 100%
+  );
+}
+
+.band-deep {
+  background: linear-gradient(140deg, var(--deep) 0%, var(--deep-soft) 100%);
+}
+
+.text-gradient {
+  background: linear-gradient(90deg, var(--accent), var(--primary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.kicker {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  color: var(--primary);
+}
